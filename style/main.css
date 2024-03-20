@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
-  list-style: none;
+  scroll-behavior: smooth;
 }
 
 :root {
@@ -18,7 +18,7 @@
   --nunito: "Nunito", sans-serif;
 }
 
-body {
+html, body {
   font-family: var(--nunito);
 }
 
@@ -56,11 +56,14 @@ h6 {
 .dark {
   background-color: var(--dark);
   color: var(--basic);
-  border-color: var(--basic);
 }
 
 .dark a {
   color: var(--basic);
+}
+
+.dark nav {
+  background-color: var(--dark);
 }
 
 /* main */
@@ -71,11 +74,10 @@ main {
 
 main aside {
   min-width: 300px;
-  height: inherit;
+  height: 100%;
   border-right: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1.6em;
   position: sticky;
-  top: 0;
   left: 0;
 }
 
@@ -128,11 +130,11 @@ main aside .row {
 
 .card__mail a {
   margin-top: 1em;
-  padding: 0.5em 1em;
+  padding: 1em;
   justify-content: center;
   gap: 5px;
   width: inherit;
-  border-radius: 5px;
+  border-radius: 10px;
   color: var(--basic);
   background-color: #6610a0;
 }
@@ -144,12 +146,24 @@ main aside .row {
 /* content */
 .content {
   flex-grow: 1;
+  width: inherit;
+  height: 100%;
+  overflow-y: scroll;
   align-self: flex-start;
 }
 
 .content nav {
   padding: 1em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Nav */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  background-color: var(--basic);
 }
 
 nav .ham__btn {
@@ -191,8 +205,85 @@ nav label input:checked ~ .ball {
   border: none;
 }
 
+/* Jumbotron */
+
 .jumbotron {
   width: inherit;
   height: 500px;
-  background-color: var(--primary);
+  background-color: #c5bcc0;
 }
+
+.jumbotron h1 {
+  font-size: 3rem;
+  font-family: var(--nunito);
+}
+
+.jumbotron p {
+  font-size: 1.2rem;
+  color: var(--grey);
+}
+
+.jumbotron .btn__friend {
+  max-width: 150px;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--primary);
+  color: var(--basic);
+  padding: 1em;
+  margin-top: 2em;
+  border-radius: 10px;
+}
+
+/* About */
+
+.about {
+  padding: 5em 0;
+}
+
+.about .row {
+  margin-top: 2em;
+  position: relative;
+  padding: 1em;
+}
+
+.about .row::after {
+  content: '';
+  width: 5px;
+  height: 100%;
+  background-color: var(--primary);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.experience {
+  max-width: 48%;
+  margin: 10px 0;
+  padding: 1em;
+  border-bottom: 5px solid var(--primary);
+  border-radius: 10px;
+  box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.experience ul {
+  color: var(--grey);
+  margin-top: 1em;
+  margin-left: 1em;
+  list-style-position:initial;
+}
+
+.experience ul li {
+  margin: 10px 0;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  left: 52%;
+}
+
+
