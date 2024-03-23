@@ -234,11 +234,17 @@ nav label input:checked ~ .ball {
   border-radius: 10px;
 }
 
-/* About */
+/* All Section */
 
-.about {
+section {
   padding: 5em 0;
 }
+
+section figcaption.title {
+  text-align: center;
+}
+
+/* About */
 
 .about .row {
   margin-top: 2em;
@@ -286,4 +292,38 @@ nav label input:checked ~ .ball {
   left: 52%;
 }
 
+/* Portfolio */
 
+.portfolio .row {
+  margin-top: 2em;
+  grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+  gap: 1.5em;
+}
+
+.card__porto .head__banner {
+  border-radius: 10px;
+  height: 250px;
+  padding: 1em;
+  align-items: flex-end;
+  background: url(https://source.unsplash.com/1000x600?building), no-repeat, center;
+  background-size: cover;
+}
+
+.card__porto .head__banner figcaption {
+  visibility: hidden;
+  color: var(--basic);
+}
+
+.title__banner {
+  margin-top: 1em;
+}
+
+.title__banner .demo a {
+  display: block;
+  padding: .8em 1.2em;
+  text-align: center;
+  color: var(--basic);
+  background-color: var(--primary);
+  font-weight: 600;
+  border-radius: 10px;
+}
